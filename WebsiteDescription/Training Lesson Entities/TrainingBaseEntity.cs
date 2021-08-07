@@ -2,13 +2,19 @@
 
 namespace WebsiteDescription
 {
-    public abstract class TrainingBaseEntity 
+    public abstract class TrainingBaseEntity
     {
         public Guid Id { get; set; }
 
         private readonly int TEXT_LIMIT = 256;
 
         private string _trainingDescription;
+
+        protected TrainingBaseEntity(Guid id, string trainingDescription)
+        {
+	        Id = id;
+	        TrainingDescription = trainingDescription;
+        }
 
         public string TrainingDescription
         {
