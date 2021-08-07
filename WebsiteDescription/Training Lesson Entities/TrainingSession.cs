@@ -20,16 +20,21 @@ namespace WebsiteDescription
             return LessonType.TextLesson;
         }
 
-        byte[] version = new byte[8];
+        private readonly byte[] _version = new byte[8];
 
         public byte[] GetVersion()
         {
-            return version;
+            return _version;
         }
 
         public void SetVersion(byte[] version)
         {
-            
+	        version.CopyTo(_version, 0);
+        }
+
+        public object Clone()
+        {
+	        throw new System.NotImplementedException();
         }
     }
 }

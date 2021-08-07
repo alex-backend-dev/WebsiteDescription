@@ -1,21 +1,24 @@
-﻿namespace WebsiteDescription
+﻿using System;
+
+namespace WebsiteDescription
 {
-    public class VideoRecources : TrainingRecources, IVersionable
-    {
-        private string _URIVideoContent;
+	public class VideoRecources : TrainingRecources, IVersionable
+	{
+		private string _URIVideoContent;
 
-        private string _URIPicture;
+		private string _URIPicture;
 
-        byte[] version = new byte[8];
+		private byte[] _version = new byte[8];
 
-        public byte[] GetVersion()
-        {
-            return version;
-        }
+		public byte[] GetVersion()
+		{
+			return _version;
+		}
 
-        public void SetVersion(byte[] version)
-        {
-            // новый массив (копирование массива из одного массива в другой WriteCopy) * не через foreach
-        }
-    }
+		public void SetVersion(byte[] version)
+		{
+			version.CopyTo(_version, 0);
+			//Array.Copy(version, _version, version.Length);
+		}
+	}
 }

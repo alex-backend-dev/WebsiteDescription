@@ -2,7 +2,7 @@
 
 namespace WebsiteDescription
 {
-    public abstract class TrainingBaseEntity 
+    public abstract class TrainingBaseEntity
     {
         public Guid Id { get; set; }
 
