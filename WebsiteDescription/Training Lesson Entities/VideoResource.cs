@@ -2,7 +2,7 @@
 
 namespace WebsiteDescription
 {
-	public class VideoRecources : TrainingRecources, IVersionable
+	public class VideoRecource : TrainingRecource, IVersionable
 	{
 		private string _URIVideoContent;
 
@@ -19,6 +19,15 @@ namespace WebsiteDescription
 		{
 			version.CopyTo(_version, 0);
 			//Array.Copy(version, _version, version.Length);
+		}
+
+		public override object Clone()
+		{
+			return this.MemberwiseClone();
+		}
+
+		public VideoRecource(Guid id, string trainingDescription) : base(id, trainingDescription)
+		{
 		}
 	}
 }

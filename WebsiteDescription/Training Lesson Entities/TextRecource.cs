@@ -1,6 +1,8 @@
-﻿namespace WebsiteDescription
+﻿using System;
+
+namespace WebsiteDescription
 {
-    public class TextRecources : TrainingRecources
+    public class TextRecource : TrainingRecource
     {
         private readonly int TEXT_LIMIT = 10000;
 
@@ -15,6 +17,15 @@
                     _text = value;
                 }
             }
+        }
+
+        public override object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
+        public TextRecource(Guid id, string trainingDescription) : base(id, trainingDescription)
+        {
         }
     }
 }

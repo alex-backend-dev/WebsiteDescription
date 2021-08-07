@@ -10,6 +10,12 @@ namespace WebsiteDescription
 
         private string _trainingDescription;
 
+        protected TrainingBaseEntity(Guid id, string trainingDescription)
+        {
+	        Id = id;
+	        TrainingDescription = trainingDescription;
+        }
+
         public string TrainingDescription
         {
             get
