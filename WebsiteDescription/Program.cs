@@ -6,7 +6,7 @@ namespace WebsiteDescription
 	{
 		public static void Main(string[] args)
 		{
-			TrainingRecource[] tr =
+			TrainingRecource[] tr=
 			{
 				new NetworkResource(new Guid(), "C# Url"),
 				new TextRecource(new Guid(), "C# Text"),
