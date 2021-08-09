@@ -23,7 +23,14 @@ namespace WebsiteDescription
 
 		public override object Clone()
 		{
-			return this.MemberwiseClone();
+			var vr = new VideoRecource(this.Id, this.TrainingDescription);
+
+			var version = new byte[8];
+			_version.CopyTo(version, 0);
+
+			vr.SetVersion(version);
+
+			return vr;
 		}
 
 		public VideoRecource(Guid id, string trainingDescription) : base(id, trainingDescription)
